@@ -1,29 +1,11 @@
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+@import '_variables.scss';
 
 html, body {
   width: 100%;
   height: auto;
   font-size: 10px;
-
-//@media (max-width: 320px) {
-//    font-size: 5px;
-//  }
-//
-//@media (min-width: 321px) and (max-width: 375px) {
-//    font-size: 6px;
-//  }
-//
-//@media (min-width: 376px) and (max-width: 414px) { // 중간 작은 화면 (예: iPhone 11, 12)
-//    font-size: 7px;
-//  }
-//
-//@media (min-width: 415px) and (max-width: 720px) { // 큰 화면 (예: iPad)
-//    font-size: 8px;
-//  }
-//
-//@media (min-width: 721px) and (max-width: 1079px) {
-//    font-size: 9px;
-//  }
+  background: $backgroundColor;
 }
 
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,time,figure,article,nav,header,footer,hgroup,video,audio,aside,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td {

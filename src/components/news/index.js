@@ -11,7 +11,7 @@ const News = () => {
     const fetchNewsData = async () => {
       try {
         const response = await axiosDefault.get(`/news/notices`);
-        setNewsList(response.data.slice(0, 5));
+        setNewsList(response.data.slice(0, 8));
       } catch(error) {
         console.log(error);
       }

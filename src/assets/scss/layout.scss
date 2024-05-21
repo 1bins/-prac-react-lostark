@@ -1,17 +1,32 @@
 @import './variables';
+// variables
+$headerWidth: 270px;
 
 // wrapper
 .wrapper {
   display: flex;
   gap: 0 32px;
+  padding-left: calc($headerWidth + $paddingVertical);
+  &:after {
+    position: fixed;
+    content: '';
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+    height: $paddingVertical;
+    background: $backgroundColor;
+  }
 }
 
 // menu
 #header {
   @include boxItem(48px, $paddingVertical);
   @include height100vh;
+  position: fixed;
+  top: $paddingVertical;
+  left: $paddingVertical;
   padding-bottom: 0;
-  width: 270px;
+  width: $headerWidth;
 
   .nav {
     &-wrap {

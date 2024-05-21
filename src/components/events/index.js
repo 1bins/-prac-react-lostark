@@ -8,16 +8,20 @@ const Events = () => {
 
   // ** functions
   useEffect(() => {
-    const fetchNewsData = async () => {
+    const fetchEventData = async () => {
       try {
         const response = await axiosDefault.get(`/news/events`);
-        setEventList(response.data);
+        return response.data;
       } catch(error) {
-        console.log(error);
+        throw error
       }
     }
-    fetchNewsData();
+    fetchEventData()
+        .then(response => setEventList(response))
+        .catch(error => console.log(error));
   }, []);
+
+  const dateFormat = dateTime => dateTime.slice(0, 10).replaceAll('-', '.');
 
   return(
       <section id="event">
@@ -33,7 +37,7 @@ const Events = () => {
                       </div>
                       <div className="text-box">
                         <p className="title">{elem.Title}</p>
-                        <p className="date">{elem.EndDate}</p>
+                        <p className="date">이벤트 종료일: {dateFormat(elem.EndDate)}</p>
                       </div>
                     </Link>
                   </li>

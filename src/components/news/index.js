@@ -6,18 +6,36 @@ const News = () => {
   // ** state
   const [newsList, setNewsList] = useState(null);
 
-  // ** functions
+  // ** varibales
   useEffect(() => {
     const fetchNewsData = async () => {
       try {
         const response = await axiosDefault.get(`/news/notices`);
-        setNewsList(response.data.slice(0, 8));
+        return response.data;
       } catch(error) {
-        console.log(error);
+        throw error
       }
     }
-    fetchNewsData();
+    fetchNewsData()
+        .then(response => setNewsList(response.slice(0, 6)))
+        .catch(error => console.log(error));
   }, []);
+
+  const dateFormat = dateTime => dateTime.slice(0, 10).replaceAll('-', '.');
+  const noticeTypeFormat = noticeType => {
+    switch(noticeType){
+      case '공지':
+        return 'type-notce'
+      case '상점':
+        return 'type-shop'
+      case '점검':
+        return 'type-check'
+      case '이벤트':
+        return 'type-event'
+      default:
+        break;
+    }
+  }
 
   return(
     <section id="news">
@@ -30,8 +48,8 @@ const News = () => {
                   <Link to={elem.Link} target="_blank" title="새 탭으로 열기">
                     <p className="title">{elem.Title}</p>
                     <p className="date">
-                      <span className="type">{elem.type}</span>
-                      {elem.Date}
+                      <span className={['type', noticeTypeFormat(elem.Type)].join(' ')}>{elem.Type}</span>
+                      {dateFormat(elem.Date)}
                     </p>
                   </Link>
                 </li>

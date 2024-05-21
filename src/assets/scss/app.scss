@@ -5,7 +5,6 @@ html, body {
   width: 100%;
   height: auto;
   font-size: 10px;
-  background: $backgroundColor;
 }
 
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,time,figure,article,nav,header,footer,hgroup,video,audio,aside,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td {
@@ -20,7 +19,7 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,time,figure,article,
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-body { line-height: 1; word-break: keep-all; word-wrap: break-word;}
+body { line-height: 1; word-break: keep-all; word-wrap: break-word; background: $backgroundColor; padding: 28px;}
 dl,ul,ol,menu,li { list-style: none; }
 fieldset,img{ border: 0 none; -webkit-box-sizing: border-box; box-sizing: border-box; }
 a { color:inherit; text-decoration:none; }

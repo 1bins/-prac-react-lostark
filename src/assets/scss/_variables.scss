@@ -4,3 +4,26 @@ $backgroundColor: #f3f6fb;
 // font
 $fontColorDark: #3a3e63;
 $fontColorGray: #585b6a;
+
+// common properties
+$paddingVertical: 28px;
+@mixin height100vh {
+  height: calc(100vh - ($paddingVertical * 2));
+}
+@mixin makeCircle {
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+}
+@mixin boxItem ($paddingV: 0, $paddingH: 0, $shadowOpacity: .02){
+  padding: $paddingV $paddingH;
+  background: #fff;
+  box-shadow: 0 0 15px 2px rgba(0, 0, 0, $shadowOpacity);
+  border-radius: 8px;
+}
+@mixin transformTrx ($top: 0, $left: 0, $x: 0, $y: 0){
+  position: absolute;
+  top: $top;
+  left: $left;
+  transform: translate($x, $y);
+}

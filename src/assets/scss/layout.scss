@@ -1,0 +1,63 @@
+@import './variables';
+
+// wrapper
+.wrapper {
+  display: flex;
+  gap: 0 32px;
+}
+
+// menu
+#header {
+  @include boxItem(48px, $paddingVertical);
+  @include height100vh;
+  padding-bottom: 0;
+  width: 270px;
+
+  .nav {
+    &-wrap {
+      h1 {
+        a {
+          font-size: 0;
+          img {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    &-inner {
+      padding-top: 58px;
+      .gnb {
+        > li {
+          position: relative;
+          &:nth-child(n+2) {
+          }
+          &.matched:after {
+            @include transformTrx($top: 50%, $y: -50%);
+            @include makeCircle;
+            content: '';
+            left: auto;
+            right: 0;
+            width: 5px;
+            height: 5px;
+            background: $fontColorDark;
+          }
+          > a {
+            display: flex;
+            align-items: center;
+            gap: 0 12px;
+            padding: 18px 0;
+            img {
+              height: 24px;
+            }
+            p {
+              color: $fontColorDark;
+              font-size: 1.7rem;
+              font-weight: 700;
+            }
+          }
+        }
+      }
+    }
+  }
+}

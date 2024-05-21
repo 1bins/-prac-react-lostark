@@ -1,8 +1,12 @@
-import News from "../news";
+import News from "../../components/news";
+import Events from "../../components/events";
 
 const Home = () => {
   return (
-      <News/>
+      <>
+        <News/>
+        <Events/>
+      </>
   )
 }
 

@@ -34,8 +34,6 @@ const Island = () => {
     schedule.CategoryName === '모험 섬'
   );
 
-  console.log(processedData)
-
   return(
       <section id="island">
         <div className="island-inner">

@@ -6,7 +6,8 @@ $headerWidth: 270px;
 .wrapper {
   display: flex;
   gap: 0 32px;
-  padding-left: calc($headerWidth + $paddingVertical);
+  //padding-left: calc($headerWidth + $paddingVertical);
+  justify-content: center;
   &:after {
     position: fixed;
     content: '';

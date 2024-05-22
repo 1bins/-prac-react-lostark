@@ -62,18 +62,48 @@ $headerWidth: 270px;
             display: flex;
             align-items: center;
             gap: 0 12px;
-            padding: 18px 0;
+            padding: 17px 0;
             img {
-              height: 24px;
+              height: 20px;
             }
             p {
               color: $fontColorDark;
-              font-size: 1.7rem;
+              font-size: 1.6rem;
               font-weight: 700;
             }
           }
         }
       }
+    }
+  }
+}
+
+// search
+.search {
+  &-inner {
+    $buttonWidth: 80px;
+    margin-bottom: $paddingVertical;
+
+    @include boxItem;
+    display: flex;
+    width: 760px;
+    height: 42px;
+    * {
+      height: 100%;
+      border-radius: 8px;
+    }
+    input {
+      padding-left: 16px;
+      width: calc(100% - $buttonWidth);
+      font-size: 1.5rem;
+      &::placeholder {
+        color: $placeholderColor;
+      }
+    }
+    button {
+      width: $buttonWidth;
+      color: #fff;
+      background: $fontColorDark;
     }
   }
 }

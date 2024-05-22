@@ -35,6 +35,9 @@ const Events = () => {
   }, []);
 
   const dateFormat = dateTime => dateTime.slice(0, 10).replaceAll('-', '.');
+  const recentEvent = startDate => Math.floor((new Date() - new Date(startDate)) / (1000 * 60 * 60 * 24)) <= 7;
+
+  console.log(eventList)
 
   return(
       <section id="event">
@@ -45,7 +48,7 @@ const Events = () => {
               return(
                   <li key={`event_${idx}`}>
                     <Link to={elem.Link} target="_blank" title="새 탭으로 열기">
-                      <div className="img-box">
+                      <div className={["img-box", recentEvent(elem.StartDate) ? "recent" : ""].join(" ")}>
                         <img src={elem.Thumbnail} alt={`${elem.Title} 썸네일 이미지`}/>
                       </div>
                       <div className="text-box">

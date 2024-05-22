@@ -80,6 +80,18 @@
             img {
               width: 100%;
             }
+            &.recent {
+              position: relative;
+              &::after {
+                position: absolute;
+                content: '';
+                top: 9px;
+                left: 10px;
+                width: 46px;
+                height: 22px;
+                background: url(../../assets/images/home/icon-recent-event.png) no-repeat center/contain;
+              }
+            }
           }
           .text-box {
             padding: 17px 18px;

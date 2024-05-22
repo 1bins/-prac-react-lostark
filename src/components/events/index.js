@@ -13,12 +13,25 @@ const Events = () => {
         const response = await axiosDefault.get(`/news/events`);
         return response.data;
       } catch(error) {
-        throw error
+        throw error.response;
       }
     }
     fetchEventData()
         .then(response => setEventList(response))
-        .catch(error => console.log(error));
+        .catch(error => {
+          switch(error.status){
+            case 503:
+              setEventList([
+                {
+                  Title: '로스트아크 게임이 점검중입니다',
+                  EndDate: new Date().toISOString().slice(0, 10)
+                }
+              ]);
+              break;
+            default:
+              console.log(error);
+          }
+        });
   }, []);
 
   const dateFormat = dateTime => dateTime.slice(0, 10).replaceAll('-', '.');

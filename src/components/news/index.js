@@ -13,12 +13,26 @@ const News = () => {
         const response = await axiosDefault.get(`/news/notices`);
         return response.data;
       } catch(error) {
-        throw error
+        throw error.response;
       }
     }
     fetchNewsData()
         .then(response => setNewsList(response.slice(0, 6)))
-        .catch(error => console.log(error));
+        .catch(error => {
+          switch(error.status){
+            case 503:
+              setNewsList([
+                {
+                  Title: '로스트아크 게임이 점검중입니다',
+                  Date: new Date().toISOString().slice(0, 10),
+                  Type: '로아툴 공지'
+                }
+              ])
+              break;
+            default:
+              console.log(error);
+          }
+        });
   }, []);
 
   const dateFormat = dateTime => dateTime.slice(0, 10).replaceAll('-', '.');

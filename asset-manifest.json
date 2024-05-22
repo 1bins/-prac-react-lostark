@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/-prac-react-lostark/static/css/main.2c21b531.css",
+    "main.js": "/-prac-react-lostark/static/js/main.572defdd.js",
+    "static/media/icon-home.svg": "/-prac-react-lostark/static/media/icon-home.4ec4f50fa5fd08d8769e1462480ebf45.svg",
+    "index.html": "/-prac-react-lostark/index.html",
+    "main.2c21b531.css.map": "/-prac-react-lostark/static/css/main.2c21b531.css.map",
+    "main.572defdd.js.map": "/-prac-react-lostark/static/js/main.572defdd.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2c21b531.css",
+    "static/js/main.572defdd.js"
+  ]
+}

@@ -19,7 +19,7 @@ const Header = () => {
               <h2 className="-offscreen">로아툴 메뉴</h2>
               <ul className="gnb">
                 <NavMenu path={'/'} imageSource={'icon_home'}>대시보드</NavMenu>
-                <NavMenu path={'/character'} imageSource={'icon_character'}>캐릭터 상세조회</NavMenu>
+                <NavMenu path={'/character'} imageSource={'icon_char'}>캐릭터 상세조회</NavMenu>
               </ul>
             </nav>
           </div>

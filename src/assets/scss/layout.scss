@@ -81,12 +81,9 @@ $headerWidth: 270px;
 // search
 .search {
   &-inner {
-    $buttonWidth: 80px;
-    margin-bottom: $paddingVertical;
-
     @include boxItem;
-    display: flex;
-    width: 760px;
+    position: relative;
+    margin-bottom: $paddingVertical;
     height: 42px;
     * {
       height: 100%;
@@ -94,16 +91,20 @@ $headerWidth: 270px;
     }
     input {
       padding-left: 16px;
-      width: calc(100% - $buttonWidth);
+      width: 100%;
       font-size: 1.5rem;
       &::placeholder {
         color: $placeholderColor;
       }
     }
     button {
-      width: $buttonWidth;
-      color: #fff;
-      background: $fontColorDark;
+      @include transformTrx($top: 50%, $left: auto, $y: -50%);
+      text-indent: -9999px;
+      overflow: hidden;
+      width: 24px;
+      height: 24px;
+      right: 16px;
+      background: url(../../assets/images/character/icon-search.svg) no-repeat center/contain;
     }
   }
 }

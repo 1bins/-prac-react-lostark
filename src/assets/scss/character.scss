@@ -1,0 +1,89 @@
+@import './variables';
+
+.character {
+  &-inner {
+    display: flex;
+    gap: 0 $paddingVertical;
+  }
+  &-left-area {
+    width: 712px;
+  }
+  &-right-area {
+    width: 290px;
+  }
+  &-error-area {
+    @include boxItem(80px, $paddingVertical);
+    color: $fontColorGray;
+    font-size: 1.8rem;
+    font-weight: 300;
+    text-align: center;
+    img {
+      display: block;
+      width: 168px;
+      margin: 0 auto 18px;
+    }
+  }
+}
+// profile
+.profile {
+  &-inner {
+    position: relative;
+    .server-box, .info-box {
+      position: absolute;
+      left: 28px;
+      color: #fff;
+      z-index: 2;
+    }
+    .server-box {
+      display: flex;
+      top: 23px;
+      gap: 0 5px;
+      font-size: 1.3rem;
+      p {
+        padding: 5px 7px;
+        background: rgba(255, 255, 255, .2);
+        border-radius: 6px;
+      }
+    }
+    .info-box {
+      bottom: 27px;
+      .level {
+        margin-bottom: 6px;
+        font-size: 1.4rem;
+      }
+      .name {
+        font-size: 2.5rem;
+        font-weight: 700;
+        span {
+          display: inline-block;
+          margin-left: 6px;
+          font-size: 1.4rem;
+          font-weight: 300;
+          opacity: .7;
+        }
+      }
+    }
+    .img-box {
+      position: relative;
+      height: 280px;
+      border-radius: 8px;
+      background: #15181d;
+      overflow: hidden;
+      .effect {
+        position: absolute;
+        top: -80%;
+        left: -20%;
+        mix-blend-mode: screen;
+        width: 48rem;
+        height: 48rem;
+        transition: all 1s ease-out 0s;
+        mask-image: radial-gradient(50% 50% at 50% 50%, rgb(255, 255, 255) 0%, rgba(255, 105, 0, 0) 100%);
+      }
+      img {
+        display: block;
+        height: 180%;
+        margin: -6% auto 0;
+      }
+    }
+  }
+}

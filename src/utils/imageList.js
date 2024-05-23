@@ -1,8 +1,8 @@
 import thumbError from '../assets/images/common/img-thumb-err.jpg'
 import logo from '../assets/images/common/logo.png'
 import iconHome from '../assets/images/menu/icon-home.svg'
-import iconCharacter from '../assets/images/menu/icon-character.svg'
-
+import iconChar from '../assets/images/menu/icon-character.svg'
+import notFoundChar from '../assets/images/character/not-fount-mococo.webp'
 
 export const imageList = [
   // common
@@ -20,7 +20,12 @@ export const imageList = [
     src: iconHome
   },
   {
-    name: 'icon_character',
-    src: iconCharacter
+    name: 'icon_char',
+    src: iconChar
+  },
+  // character
+  {
+    name: 'char_not_found',
+    src: notFoundChar
   }
 ]

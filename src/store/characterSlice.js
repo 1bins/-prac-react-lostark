@@ -9,7 +9,7 @@ export const getCharacter = createAsyncThunk(
         return response.data;
       } catch (error) {
         if (!error.response) {
-          throw error.message; // Network error
+          throw error.message; // Network error 에러메시지가 없으므로 네트워크 에러
         }
         return rejectWithValue(error.response); // Server error
       }

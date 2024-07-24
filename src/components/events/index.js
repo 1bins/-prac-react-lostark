@@ -37,8 +37,6 @@ const Events = () => {
   const dateFormat = dateTime => dateTime.slice(0, 10).replaceAll('-', '.');
   const recentEvent = startDate => Math.floor((new Date() - new Date(startDate)) / (1000 * 60 * 60 * 24)) <= 7;
 
-  console.log(eventList)
-
   return(
       <section id="event">
         <div className="event-inner">

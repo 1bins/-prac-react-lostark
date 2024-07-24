@@ -34,6 +34,8 @@ const Island = () => {
     schedule.CategoryName === '모험 섬'
   );
 
+  console.log(processedData)
+
   return(
       <section id="island">
         <div className="island-inner">
@@ -54,7 +56,7 @@ const Island = () => {
                     }
                   </div>
                   <ul className="island-rewards">
-                    {island.RewardItems.map((reward, idx) =>
+                    {island.RewardItems[0].Items.map((reward, idx) =>
                       <li key={`reward_${idx}`}>
                         <img src={reward.Icon} alt={`${reward.Name} 이미지`}/>
                         <p className="hover">{reward.Name}</p>

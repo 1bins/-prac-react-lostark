@@ -3,10 +3,12 @@ import axiosDefault from "../../configs/axios";
 
 const Island = () => {
   // ** state
-  const [islandData, setIslandData] = useState(null);
+  const [islandData, setIslandData] = useState([]);
 
   // ** variables
-  const today = new Date().toISOString().split('T')[0]
+  const date = new Date();
+  date.setHours(date.getHours() + 9);
+  const today = date.toISOString().split('T')[0]
 
   useEffect(() => {
     const fetchEventData = async () => {
@@ -29,9 +31,9 @@ const Island = () => {
         });
   }, []);
 
-  const processedData = islandData?.filter(schedule =>
-    String(schedule.StartTimes).split('T')[0] === today &&
-    schedule.CategoryName === '모험 섬'
+  const processedData = islandData?.filter(island =>
+    island.CategoryName === '모험 섬' &&
+    island.StartTimes.some(time => time.startsWith(today))
   );
 
   console.log(processedData)

@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/-prac-react-lostark/static/css/main.8f950e0e.css",
-    "main.js": "/-prac-react-lostark/static/js/main.310d4b2c.js",
+    "main.css": "/-prac-react-lostark/static/css/main.720676df.css",
+    "main.js": "/-prac-react-lostark/static/js/main.ddac3c83.js",
     "static/media/not-fount-mococo.webp": "/-prac-react-lostark/static/media/not-fount-mococo.2d95bc19b79363b3f34b.webp",
-    "static/media/icon-character.svg": "/-prac-react-lostark/static/media/icon-character.f87cea2a1aef5254e490bf4c471e26ea.svg",
-    "static/media/icon-home.svg": "/-prac-react-lostark/static/media/icon-home.4ec4f50fa5fd08d8769e1462480ebf45.svg",
     "static/media/icon-search.svg": "/-prac-react-lostark/static/media/icon-search.36022c6a5a7cd4e19e2e.svg",
+    "static/media/icon-character.svg": "/-prac-react-lostark/static/media/icon-character.dcf437769f3646ef3a4cb659bf83f658.svg",
     "index.html": "/-prac-react-lostark/index.html",
-    "main.8f950e0e.css.map": "/-prac-react-lostark/static/css/main.8f950e0e.css.map",
-    "main.310d4b2c.js.map": "/-prac-react-lostark/static/js/main.310d4b2c.js.map"
+    "static/media/icon-home.svg": "/-prac-react-lostark/static/media/icon-home.9a34152ccb95d3e18eaf20153b408a82.svg",
+    "main.720676df.css.map": "/-prac-react-lostark/static/css/main.720676df.css.map",
+    "main.ddac3c83.js.map": "/-prac-react-lostark/static/js/main.ddac3c83.js.map"
   },
   "entrypoints": [
-    "static/css/main.8f950e0e.css",
-    "static/js/main.310d4b2c.js"
+    "static/css/main.720676df.css",
+    "static/js/main.ddac3c83.js"
   ]
 }

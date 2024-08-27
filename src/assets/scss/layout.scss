@@ -64,9 +64,10 @@ $headerWidth: 270px;
             gap: 0 12px;
             padding: 17px 0;
             img {
-              height: 20px;
+              height: 23px;
             }
             p {
+              padding-top: 0.2rem;
               color: $fontColorDark;
               font-size: 1.6rem;
               font-weight: 700;

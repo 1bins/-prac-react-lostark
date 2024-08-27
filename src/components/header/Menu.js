@@ -1,5 +1,4 @@
 import {Link, useLocation} from "react-router-dom";
-import {findImage} from "../../utils";
 
 const NavMenu = ({path, imageSource, children}) => {
   // ** variables
@@ -10,7 +9,7 @@ const NavMenu = ({path, imageSource, children}) => {
   return (
       <li className={matchPath(path)}>
         <Link to={path}>
-          <img src={findImage(imageSource)} alt="홈 아이콘"/>
+          <img src={require(`assets/images/menu/${imageSource}.svg`)} alt="홈 아이콘"/>
           <p>{children}</p>
         </Link>
       </li>

@@ -1,7 +1,7 @@
-import '../../assets/scss/home.scss';
-import News from "../../components/news";
-import Events from "../../components/events";
-import Island from "../../components/island";
+import 'assets/scss/home.scss';
+import News from "components/news";
+import Events from "components/events";
+import Island from "components/island";
 
 const Home = () => {
   return (

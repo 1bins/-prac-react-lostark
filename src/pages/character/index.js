@@ -1,8 +1,7 @@
 import {useSelector} from "react-redux";
-import Search from "../../components/search";
-import Profile from "../../components/character/profile";
-import {findImage} from "../../utils";
-import '../../assets/scss/character.scss';
+import Search from "components/search";
+import Profile from "components/character/profile";
+import 'assets/scss/character.scss';
 
 const Character = () => {
   // ** store
@@ -17,7 +16,7 @@ const Character = () => {
             <div className="character-left-area">
               {data === null
                   ? <div className="character-error-area">
-                      <img src={findImage('char_not_found')} alt="캐릭터 미존재시 이미지"/>
+                      <img src={require('assets/images/character/not-fount-mococo.webp')} alt="캐릭터 미존재시 이미지"/>
                         존재하지 않는 캐릭터입니다.
                    </div>
                   : JSON.stringify(data) === "{}"

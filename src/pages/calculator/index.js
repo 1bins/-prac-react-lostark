@@ -4,12 +4,14 @@ import {useEffect, useMemo, useState} from "react";
 import {characterList} from "utils/characterList";
 import {clearGold} from "utils/cleargold";
 import Raid from "components/calculator/raid";
+import classNames from "classnames/bind";
 
 const Calculator = () => {
   // ** states
   const [editList, setEditList] = useState(new Array(6).fill(null).map((_, i) => ({id: i + 1, isEdit: false})));
   const [charList, setCharList] = useState(characterList);
   const [raidCount, setRaidCount] = useState(0);
+  const [modalOpen, setModalOpen] = useState(false);
 
   // ** variables
   const editCharacterNumb = useMemo(() => (
@@ -45,6 +47,7 @@ const Calculator = () => {
                         editCharacterNumb={editCharacterNumb}
                         raidCount={raidCount}
                         setRaidCount={setRaidCount}
+                        setModalOpen={setModalOpen}
                     />
                 ))
               }
@@ -57,7 +60,7 @@ const Calculator = () => {
               }, 0).toLocaleString()}</b></p>
             </article>
             {/* 레이드 리스트 */}
-            <article className="raid-wrap">
+            <article className={classNames("raid-wrap", {"active": modalOpen})}>
             {
                 clearGold.map((raid, idx) => (
                     <Raid

@@ -8,11 +8,7 @@ const Router = () => {
   return(
     <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route path="/" element={<Home/>}></Route>
-          <Route path="/character" element={<Character/>}></Route>
-          <Route path="/goldCalculator" element={<Calculator/>}></Route>
-        </Route>
+        <Route path="/" element={<Calculator />} />
       </Routes>
     </BrowserRouter>
   )

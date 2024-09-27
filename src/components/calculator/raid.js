@@ -39,19 +39,23 @@ const Raid = ({ id,
 
   return (
     <div className={classNames("raid-box", `raid-box${id}`, {'checked': isChecked})}>
-      <div className="raid-img-box">
-        <img src={require(`assets/images/calculator/${img}.jpg`)} alt="레이드 이미지"/>
-      </div>
-      <div className="raid-name-box">
-        <p>{name}</p>
+      <div className="raid-info-box">
+        <div className="raid-img-box">
+          <img src={require(`assets/images/calculator/${img}.jpg`)} alt="레이드 이미지"/>
+        </div>
+        <div className="raid-name-box">
+          <p>{name}</p>
+        </div>
       </div>
       <div className="raid-gold-box">
         {
           gold.map((item, idx) => (
               <button
-                key={idx}
-                onClick={() => {handleRaidCount(name, item)}}
-                className={classNames({"normal" : item.level.includes('노말')}, {"hard" : item.level.includes('하드')})}
+                  key={idx}
+                  onClick={() => {
+                    handleRaidCount(name, item)
+                  }}
+                  className={classNames({"normal" : item.level.includes('노말')}, {"hard" : item.level.includes('하드')})}
               >{item.level}</button>
           ))
         }

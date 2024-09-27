@@ -7,10 +7,22 @@
     transform: translateY(-15px);
   }
 }
+.calc-wrap {
+  width: 93rem;
+  margin: 0 auto;
 
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+}
 .character-wrap {
   display: flex;
   gap: 0 18px;
+
+  @media screen and (max-width: 768px) {
+    flex-wrap: wrap;
+    gap: 1rem 2%;
+  }
 
   .character-box {
     position: relative;
@@ -22,6 +34,10 @@
     border-radius: 0.5rem;
     box-shadow: 0 0 15px 2px rgba(0, 0, 0, 0.02);
     overflow: hidden;
+
+    @media screen and (max-width: 768px) {
+      width: 49%
+    }
 
     .loader-box {
       position: absolute;
@@ -152,7 +168,6 @@
 
 .total-wrap {
   display: flex;
-  width: 930px;
   margin: 1.6rem 0 2.6rem;
   padding: 1.5rem 2.5rem;
   justify-content: center;
@@ -178,9 +193,22 @@
 
 .raid-wrap {
   display: flex;
-  width: 930px;
   flex-wrap: wrap;
   gap: 0.8rem;
+
+  @media screen and (max-width: 750px) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    padding: 2rem 1.8rem;
+    z-index: 99;
+    background: rgba(0, 0, 0, .3);
+
+    &.active {
+      display: block;
+    }
+  }
 
   .raid-box {
     position: relative;
@@ -191,6 +219,15 @@
     align-items: center;
     flex: 1 1 30%;
     box-shadow: 0 0 15px 2px rgba(0, 0, 0, 0.02);
+
+    @media screen and (max-width: 750px) {
+      display: block;
+      border-radius: 0.5rem;
+
+      &:nth-child(n+2) {
+        margin-top: 0.6rem;
+      }
+    }
     
     &::before {
       position: absolute;
@@ -204,6 +241,17 @@
     &.checked {
       opacity: 0.3;
       pointer-events: none;
+    }
+
+    .raid-info-box {
+      display: flex;
+      gap: 0 0.8rem;
+      align-items: center;
+
+      @media screen and (max-width: 750px) {
+        margin-bottom: 0.8rem;
+        justify-content: center;
+      }
     }
 
     .raid-img-box {
@@ -224,10 +272,17 @@
     .raid-gold-box {
       padding-left: 0.2rem;
       display: flex;
-      gap: 0 0.6rem;
+      gap: 0.6rem;
+
+      @media screen and (max-width: 750px) {
+        padding: 0;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.8rem;
+      }
 
       button {
-        padding: 0.4rem 0.6rem 0.35rem;
+        padding: 0.6rem 0.8rem 0.55rem;
         font-size: 1.4rem;
         color: #b881f6;
         background: #f4e8ff;

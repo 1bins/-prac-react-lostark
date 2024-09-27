@@ -10,7 +10,8 @@ const Character = ({ setCharacter,
                      setEditList,
                      editCharacterNumb,
                      setRaidCount,
-                     raidCount
+                     raidCount,
+                     setModalOpen
 }) => {
   //** state
   const [loading, setLoading] = useState(false);
@@ -33,6 +34,7 @@ const Character = ({ setCharacter,
     if (raidCount === 3) {
       setEditList(list => list.map(elem => elem.id === id ? {...elem, isEdit: false} : elem));
       setRaidCount(0);
+      setModalOpen(false);
     }
   }, [raidCount])
   // 랜덤 숫자 구하기
@@ -69,7 +71,7 @@ const Character = ({ setCharacter,
   // 캐릭터 버튼
   const handleCharacterButton = () => {
     if (isEdit) {
-      // 캐릭터 저장 함수
+      // 캐릭터 레이드 개수 체크
       if (raidCount !== 3) {
         alert('세 개의 레이드를 선택해주세요.');
         return;
@@ -82,6 +84,7 @@ const Character = ({ setCharacter,
       }
 
       // 캐릭터 수정 함수
+      setModalOpen(true);
       if (editCharacterNumb) {
         alert('이미 다른 캐릭터가 골드 계산을 진행중입니다')
         return;

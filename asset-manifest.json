@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/-prac-react-lostark/static/css/main.ae10fd54.css",
-    "main.js": "/-prac-react-lostark/static/js/main.c004c03e.js",
+    "main.css": "/-prac-react-lostark/static/css/main.800f14d0.css",
+    "main.js": "/-prac-react-lostark/static/js/main.c9f4a076.js",
     "static/media/WeatherArtist.png": "/-prac-react-lostark/static/media/WeatherArtist.199b37c453bbf3ca3aa6.png",
     "static/media/Destroyer.png": "/-prac-react-lostark/static/media/Destroyer.292da7c04aa305375467.png",
     "static/media/Demonic.png": "/-prac-react-lostark/static/media/Demonic.eba5d6c1e6c2f389ad6d.png",
@@ -38,11 +38,11 @@
     "index.html": "/-prac-react-lostark/index.html",
     "static/media/icon-calculator.svg": "/-prac-react-lostark/static/media/icon-calculator.87c4204cbf707aa21a4e.svg",
     "static/media/icon-home.svg": "/-prac-react-lostark/static/media/icon-home.9a34152ccb95d3e18eaf.svg",
-    "main.ae10fd54.css.map": "/-prac-react-lostark/static/css/main.ae10fd54.css.map",
-    "main.c004c03e.js.map": "/-prac-react-lostark/static/js/main.c004c03e.js.map"
+    "main.800f14d0.css.map": "/-prac-react-lostark/static/css/main.800f14d0.css.map",
+    "main.c9f4a076.js.map": "/-prac-react-lostark/static/js/main.c9f4a076.js.map"
   },
   "entrypoints": [
-    "static/css/main.ae10fd54.css",
-    "static/js/main.c004c03e.js"
+    "static/css/main.800f14d0.css",
+    "static/js/main.c9f4a076.js"
   ]
 }

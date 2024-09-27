@@ -13,6 +13,8 @@ const Profile = () => {
     return `rgba(${r}, ${g}, ${b}, 0.6)`
   }
 
+  console.log(data)
+
   return(
       <article id="profile">
         <div className="profile-inner">

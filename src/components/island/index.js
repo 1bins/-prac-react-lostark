@@ -33,7 +33,7 @@ const Island = () => {
 
   const processedData = islandData?.filter(island =>
     island.CategoryName === '모험 섬' &&
-    String(island.StartTimes).split('T')[0] === today
+    String(island.StartTimes).split('T')[0] === '2024-09-25'
   );
 
   console.log(processedData)

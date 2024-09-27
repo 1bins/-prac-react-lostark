@@ -2,7 +2,7 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Layout from "../layout";
 import Home from "pages/home";
 import Character from "pages/character";
-import Calculator from "pages/gold_calculator";
+import Calculator from "pages/calculator";
 
 const Router = () => {
   return(

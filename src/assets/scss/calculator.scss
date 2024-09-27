@@ -1,90 +1,269 @@
 @import './variables';
-
-#onetouch {
-  display: flex;
-
-  h3 {
-    margin-bottom: 1.2rem;
-    font-size: 2rem;
-    font-weight: 700;
+@keyframes dot-jump {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-15px);
   }
 }
 
-.onetouch-inner {
-  .raid-list {
-    padding: 1.1rem 1.4rem;
-    border-radius: 8px;
+.character-wrap {
+  display: flex;
+  gap: 0 18px;
+
+  .character-box {
+    position: relative;
+    padding-top: 1.4rem;
+    width: 14rem;
+    height: 22.5rem;
+    text-align: center;
     background: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 15px 2px rgba(0, 0, 0, 0.02);
+    overflow: hidden;
 
-    .raid {
-      display: flex;
-      align-items: center;
-      gap: 0 8px;
+    .loader-box {
+      position: absolute;
+      top: 0;
+      left: 0;
+      align-content: center;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, .75);
 
-      &:nth-child(n+2) {
-        margin-top: 0.5rem;
-      }
+      .loader {
+        position: relative;
+        width: 5rem;
+        border-radius: 50%;
+        display: inline-block;
+        vertical-align: middle;
 
-      .img-box {
-        border-radius: 0.5rem;
-        overflow: hidden;
+        .dot {
+          width: 1rem;
+          height: 1rem;
+          background: #00e676;
+          border-radius: 50%;
+          position: absolute;
+          top: calc(50% - 0.5rem);
 
-        img {
-          width: 2.6rem;
-        }
-      }
-      .button-box {
-        display: flex;
-        gap: 0 5px;
-        
-        button {
-          padding: 3px 4px;
-          font-size: 1.2rem;
-          border-radius: 0.2rem;
-          background: #f8f8f8;
-          border: 1px solid #eee;
+          &.dot1 {
+            left: 0;
+            animation: dot-jump 0.5s cubic-bezier(0.77, 0.47, 0.64, 0.28) alternate infinite;
+          }
 
-          &:disabled {
-            cursor: default;
-            opacity: .6;
-            border: none;
-            text-decoration: line-through #666;
+          &.dot2 {
+            left: 2rem;
+            animation: dot-jump 0.5s 0.2s cubic-bezier(0.77, 0.47, 0.64, 0.28) alternate infinite;
+          }
+
+          &.dot3 {
+            left: 4rem;
+            animation: dot-jump 0.5s 0.4s cubic-bezier(0.77, 0.47, 0.64, 0.28) alternate infinite;
           }
         }
       }
     }
-  }
-  
-  .temp  {
-    margin-top: 1.5rem;
-    background: #fff;
-    border-radius: 5px;
 
-    .total-gold {
+    .button-box {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+    }
+
+    .profile-box {
+      width: 6rem;
+      height: 6rem;
+      margin: 0 auto;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .input-box {
+      padding: 0 1.2rem;
+      margin: 0.7rem 0 1.2rem;
+
+      input {
+        width: 100%;
+        height: 2.6rem;
+        font-size: 1.5rem;
+        color: #555;
+        font-weight: 500;
+        background: #f6f8fa;
+        text-align: center;
+
+        &::placeholder {
+          color: #b2b2b2;
+        }
+      }
+
+      &.active input {
+        color: #383838;
+        font-weight: 700;
+      }
+    }
+
+    .raidList-box {
+      margin-bottom: 1.3rem;
+
+      .raid-name {
+        font-size: 1.3rem;
+        color: #a9a9a9;
+        font-weight: 500;
+
+        &.selected {
+          color: #383838;
+        }
+
+        &:nth-child(n+2) {
+          margin-top: 0.8rem;
+        }
+      }
+    }
+
+    .gold-box {
       display: flex;
-      gap: 0 3rem;
-      padding: 1.2rem 2rem;
+      gap: 0 0.6rem;
       align-items: center;
       justify-content: center;
 
-      .text {
-        font-size: 1.5rem;
+      img {
+        width: 1.8rem;
       }
 
-      .text-gold {
-        padding-left: 8px;
-        font-size: 3rem;
+      .gold {
+        font-size: 1.4rem;
+        color: #383838;
         font-weight: 700;
       }
+    }
+
+    .deco-box {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 0.6rem;
+    }
+  }
+}
+
+.total-wrap {
+  display: flex;
+  width: 930px;
+  margin: 1.6rem 0 2.6rem;
+  padding: 1.5rem 2.5rem;
+  justify-content: center;
+  align-items: center;
+  background: #fffdec;
+  border: 1px solid #eedf55;
+
+  img {
+    display: block;
+    margin-top: -0.2rem;
+    width: 2.5rem;
+  }
+
+  .total-gold {
+    margin-left: 1rem;
+    font-size: 1.6rem;
+
+    b {
+      padding-left: 0.5rem;
+    }
+  }
+}
+
+.raid-wrap {
+  display: flex;
+  width: 930px;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+
+  .raid-box {
+    position: relative;
+    display: flex;
+    padding: 0.9rem 1.7rem;
+    background: #fff;
+    gap: 0 0.8rem;
+    align-items: center;
+    flex: 1 1 30%;
+    box-shadow: 0 0 15px 2px rgba(0, 0, 0, 0.02);
+    
+    &::before {
+      position: absolute;
+      content: '';
+      top: 0;
+      left: 0;
+      width: 0.5rem;
+      height: 100%;
+    }
+
+    &.checked {
+      opacity: 0.3;
+      pointer-events: none;
+    }
+
+    .raid-img-box {
+      width: 30px;
+      border-radius: 0.6rem;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .raid-name-box {
+      font-size: 1.5rem;
+      font-weight: 500;
+    }
+
+    .raid-gold-box {
+      padding-left: 0.2rem;
+      display: flex;
+      gap: 0 0.6rem;
 
       button {
-        width: 5.5rem;
-        height: 2.6rem;
-        font-size: 1.5rem;
-        background: #ccc;
-        border-radius: 5px;
+        padding: 0.4rem 0.6rem 0.35rem;
+        font-size: 1.4rem;
+        color: #b881f6;
+        background: #f4e8ff;
+        border-radius: 0.3rem;
+        border: 1px solid transparent;
         cursor: pointer;
+
+        &.normal {
+          color: #eda771;
+          background: #fdf6dc;
+        }
+
+        &.hard {
+          color: #ec6a8c;
+          background: #ffe2e6;
+        }
       }
+    }
+  }
+}
+
+.button-wrap {
+  margin-top: 2.3rem;
+  text-align: right;
+
+  .btn-save {
+    width: 15rem;
+    height: 4.5rem;
+    font-size: 1.4rem;
+    color: #fff;
+    background: #3a3e63;
+    border-radius: 0.3rem;
+    transition: background-color .5s;
+    
+    &:hover {
+      background: #272a49;
     }
   }
 }

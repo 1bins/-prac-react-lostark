@@ -1,10 +1,7 @@
 import classNames from "classnames/bind";
 import {useEffect, useState} from "react";
 
-const Raid = ({ id,
-                name,
-                img,
-                gold,
+const Raid = ({ raid: {id, name, src: img, gold},
                 setRaid,
                 editCharacterNumb,
                 raidCount,

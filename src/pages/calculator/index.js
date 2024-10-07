@@ -65,10 +65,7 @@ const Calculator = () => {
                 clearGold.map((raid, idx) => (
                     <Raid
                       key={idx}
-                      id={raid.id}
-                      name={raid.name}
-                      img={raid.src}
-                      gold={raid.gold}
+                      raid={raid}
                       setRaid={setCharList}
                       editCharacterNumb={editCharacterNumb}
                       raidCount={raidCount}
